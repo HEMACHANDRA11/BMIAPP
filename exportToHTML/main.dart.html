@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+
+<span class="s2">void </span><span class="s0">main() {</span>
+  <span class="s0">runApp(</span><span class="s2">const </span><span class="s0">MyApp())</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">MyApp </span><span class="s2">extends </span><span class="s0">StatelessWidget {</span>
+  <span class="s2">const </span><span class="s0">MyApp({Key? key}) : </span><span class="s2">super</span><span class="s0">(key: key)</span><span class="s2">;</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">MaterialApp(</span>
+      <span class="s0">home: MyHomePage()</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+<span class="s2">class </span><span class="s0">MyHomePage </span><span class="s2">extends </span><span class="s0">StatefulWidget {</span>
+  <span class="s2">const </span><span class="s0">MyHomePage({Key? key}) : </span><span class="s2">super</span><span class="s0">(key: key)</span><span class="s2">;</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">State&lt;MyHomePage&gt; createState() =&gt; _MyHomePageState()</span><span class="s2">;</span>
+<span class="s0">}</span>
+<span class="s2">var </span><span class="s0">wtController = TextEditingController()</span><span class="s2">;</span>
+<span class="s2">var </span><span class="s0">ftController = TextEditingController()</span><span class="s2">;</span>
+<span class="s2">var </span><span class="s0">inController = TextEditingController()</span><span class="s2">;</span>
+
+<span class="s2">var </span><span class="s0">result = </span><span class="s1">&quot;&quot;</span><span class="s2">;</span>
+
+<span class="s2">var </span><span class="s0">bgColor = Colors.indigo.shade200</span><span class="s2">;</span>
+
+<span class="s2">class </span><span class="s0">_MyHomePageState </span><span class="s2">extends </span><span class="s0">State&lt;MyHomePage&gt; {</span>
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">Scaffold(</span>
+      <span class="s0">appBar: AppBar(</span>
+        <span class="s0">title: Text(</span><span class="s1">&quot;BMI CALCULATOR&quot;</span><span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">body: Container(</span>
+        <span class="s0">color: bgColor</span><span class="s2">,</span>
+        <span class="s0">child: Center(</span>
+          <span class="s0">child: Container(</span>
+            <span class="s0">width: </span><span class="s3">300</span><span class="s2">,</span>
+            <span class="s0">child: Column(</span>
+              <span class="s0">mainAxisAlignment: MainAxisAlignment.center</span><span class="s2">,</span>
+              <span class="s0">children: [</span>
+                <span class="s0">Text(</span><span class="s1">'BMI'</span><span class="s2">,</span><span class="s0">style: TextStyle(</span>
+                  <span class="s0">fontSize: </span><span class="s3">34</span><span class="s2">, </span><span class="s0">fontWeight: FontWeight.w700</span>
+                <span class="s0">)</span><span class="s2">,</span><span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">SizedBox(height: </span><span class="s3">21</span><span class="s2">,</span><span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">TextField(</span>
+                  <span class="s0">controller: wtController</span><span class="s2">,</span>
+                  <span class="s0">decoration: InputDecoration(</span>
+                    <span class="s0">label: Text(</span><span class="s1">'Enter your Weight in Kgs'</span><span class="s0">)</span><span class="s2">,</span>
+                    <span class="s0">prefixIcon: Icon(Icons.line_axis)</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                  <span class="s0">keyboardType: TextInputType.number</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">SizedBox(height: </span><span class="s3">11</span><span class="s2">,</span><span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">TextField(</span>
+                  <span class="s0">controller: ftController</span><span class="s2">,</span>
+                  <span class="s0">decoration: InputDecoration(</span>
+                      <span class="s0">label: Text(</span><span class="s1">'Enter your Height in feets'</span><span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">prefixIcon: Icon(Icons.height)</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                  <span class="s0">keyboardType: TextInputType.number</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">SizedBox(height: </span><span class="s3">11</span><span class="s2">,</span><span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">TextField(</span>
+                  <span class="s0">controller: inController</span><span class="s2">,</span>
+                  <span class="s0">decoration: InputDecoration(</span>
+                      <span class="s0">label: Text(</span><span class="s1">'Enter your Height in inches'</span><span class="s0">)</span><span class="s2">,</span>
+                      <span class="s0">prefixIcon: Icon(Icons.height)</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                  <span class="s0">keyboardType: TextInputType.number</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">SizedBox(height: </span><span class="s3">16</span><span class="s2">,</span><span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">ElevatedButton(onPressed: (){</span>
+
+                  <span class="s2">var </span><span class="s0">wt = wtController.text.toString()</span><span class="s2">;</span>
+                  <span class="s2">var </span><span class="s0">ft = ftController.text.toString()</span><span class="s2">;</span>
+                  <span class="s2">var </span><span class="s0">inch = inController.text.toString()</span><span class="s2">;</span>
+
+                  <span class="s2">if</span><span class="s0">(wt!=</span><span class="s1">&quot;&quot; </span><span class="s0">&amp;&amp; ft!=</span><span class="s1">&quot;&quot; </span><span class="s0">&amp;&amp; inch!=</span><span class="s1">&quot;&quot;</span><span class="s0">){</span>
+
+                    <span class="s4">//BMI CALCULATION</span>
+                    <span class="s2">var </span><span class="s0">iWt = int.parse(wt)</span><span class="s2">;</span>
+                    <span class="s2">var </span><span class="s0">iFt = int.parse(ft)</span><span class="s2">;</span>
+                    <span class="s2">var </span><span class="s0">iInch = int.parse(inch)</span><span class="s2">;</span>
+
+                    <span class="s2">var </span><span class="s0">tInch = (iFt*</span><span class="s3">12</span><span class="s0">) + iInch</span><span class="s2">;</span>
+
+                    <span class="s2">var </span><span class="s0">tCm = tInch*</span><span class="s3">2.54</span><span class="s2">;</span>
+
+                    <span class="s2">var </span><span class="s0">tM = tCm/</span><span class="s3">100</span><span class="s2">;</span>
+
+                    <span class="s2">var </span><span class="s0">bmi = iWt/(tM*tM)</span><span class="s2">;</span>
+
+                    <span class="s2">var </span><span class="s0">msg = </span><span class="s1">&quot;&quot;</span><span class="s2">;</span>
+
+                    <span class="s2">if</span><span class="s0">(bmi&gt;</span><span class="s3">25</span><span class="s0">){</span>
+                      <span class="s0">msg = </span><span class="s1">&quot;You are Over Weight!!&quot;</span><span class="s2">;</span>
+                      <span class="s0">bgColor = Colors.orange.shade200</span><span class="s2">;</span>
+                    <span class="s0">}</span><span class="s2">else if</span><span class="s0">(bmi&lt;</span><span class="s3">18</span><span class="s0">){</span>
+                      <span class="s0">msg = </span><span class="s1">&quot;You are Under Weight!!&quot;</span><span class="s2">;</span>
+                      <span class="s0">bgColor = Colors.red.shade200</span><span class="s2">;</span>
+                    <span class="s0">}</span><span class="s2">else </span><span class="s0">{</span>
+                      <span class="s0">msg = </span><span class="s1">&quot;You are Healthy!!&quot;</span><span class="s2">;</span>
+                      <span class="s0">bgColor = Colors.green.shade200</span><span class="s2">;</span>
+                    <span class="s0">}</span>
+                    <span class="s0">setState(() {</span>
+                      <span class="s0">result = </span><span class="s1">&quot;</span><span class="s0">$msg </span><span class="s1">\n Your BMI is: </span><span class="s0">${bmi.toStringAsFixed(</span><span class="s3">4</span><span class="s0">)}</span><span class="s1">&quot;</span><span class="s2">;</span>
+                    <span class="s0">})</span><span class="s2">;</span>
+
+                  <span class="s0">}</span><span class="s2">else</span><span class="s0">{</span>
+                    <span class="s0">setState(() {</span>
+                      <span class="s0">result = </span><span class="s1">&quot;Please fill the all the required blanks!!&quot;</span><span class="s2">;</span>
+                    <span class="s0">})</span><span class="s2">;</span>
+                  <span class="s0">}</span>
+
+
+                <span class="s0">}</span><span class="s2">, </span><span class="s0">child: Text(</span><span class="s1">'Calculate'</span><span class="s0">))</span><span class="s2">,</span>
+
+                <span class="s0">SizedBox(height: </span><span class="s3">11</span><span class="s2">,</span><span class="s0">)</span><span class="s2">,</span>
+
+                <span class="s0">Text(result</span><span class="s2">,</span><span class="s0">style: TextStyle(fontSize: </span><span class="s3">19</span><span class="s0">)</span><span class="s2">,</span><span class="s0">)</span>
+
+
+
+
+
+
+              <span class="s0">]</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">)</span><span class="s2">,</span>
+        <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+
+</pre>
+</body>
+</html>
