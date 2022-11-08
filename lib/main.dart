@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled4/secondpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -82,6 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 SizedBox(height: 16,),
 
+
+
                 ElevatedButton(onPressed: (){
 
                   var wt = wtController.text.toString();
@@ -118,6 +121,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       result = "$msg \n Your BMI is: ${bmi.toStringAsFixed(4)}";
                     });
+
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage(bmi: bmi,)));
+
 
                   }else{
                     setState(() {
